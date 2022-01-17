@@ -1,5 +1,6 @@
 import React from "react";
 import { InputHTMLAttributes } from "react";
+import { Container, InputContainer, Label } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
@@ -8,10 +9,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input = ({ label, placeholder, ...rest }: InputProps) => {
   return (
-    <div style={{ border: "red" }}>
-      {label && <label style={{ marginRight: "5px" }}>{label}:</label>}
-      <input placeholder={placeholder} {...rest} />
-    </div>
+    <Container>
+      {label && <Label style={{ marginRight: "5px" }}>{label}:</Label>}
+      <InputContainer placeholder={placeholder} {...rest} />
+    </Container>
   );
 };
 

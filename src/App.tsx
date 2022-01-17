@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./App.css";
 import Card from "./components/Card";
 import Input from "./components/Input";
+import { Container, DivContainer, UlContainer } from "./styles";
 
 interface User {
   name: string;
@@ -24,8 +24,8 @@ function App() {
   console.log("users", users);
 
   return (
-    <div className="App">
-      <div>
+    <Container>
+      <DivContainer>
         <Input
           placeholder="Insira seu nome"
           label="Nome"
@@ -48,16 +48,18 @@ function App() {
           }}
         />
         <button onClick={handleSubmit}>Enviar</button>
-      </div>
+      </DivContainer>
 
       {users.length > 0 && (
-        <div>
+        <UlContainer>
           {users.map((user) => (
-            <Card user={user} key={user.name} />
+            <li key={user.name}>
+              <Card user={user} />
+            </li>
           ))}
-        </div>
+        </UlContainer>
       )}
-    </div>
+    </Container>
   );
 }
 

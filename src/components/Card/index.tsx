@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "./styles";
 
 interface CardProps {
   user: User;
@@ -12,11 +13,11 @@ interface User {
 
 const Card = ({ user }: CardProps) => {
   return (
-    <div>
-      <h3>{user.name}</h3>
-      <p>{user.age}</p>
-      <p>{user.hobby}</p>
-    </div>
+    <Container>
+      <h3>Nome: {user.name}</h3>
+      <p>Idade: {user.age}</p>
+      <p>Hobby: {user.hobby}</p>
+    </Container>
   );
 };
 
